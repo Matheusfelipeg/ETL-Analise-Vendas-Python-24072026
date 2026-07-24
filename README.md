@@ -16,7 +16,7 @@
 ## 📄 Estrutura do repositório
 
 - Veja o notebook completo do projeto:
-[ETL_Analise_Vendas.ipynb](INSIRA_O_LINK_DO_NOTEBOOK)
+[ETL_Analise_Vendas.ipynb](https://colab.research.google.com/drive/1jpt2bINIp5HSwPj2QfODNh1S1_1UPsUP?usp=sharing)
 
 - Arquivos gerados após o processo de transformação:
   - Vendas_SP.csv
