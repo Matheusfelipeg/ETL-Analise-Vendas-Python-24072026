@@ -1,214 +1,87 @@
-# 📊 Projeto ETL - Análise de Vendas com Python
+<h2 align="center">
+  ETL e Análise de Vendas com Python
+</h2>
 
-## 📌 Sobre o projeto
+<p align="center">
+  Este projeto foi desenvolvido com o objetivo de criar um processo completo de ETL (Extract, Transform and Load) utilizando Python e Pandas para tratar, organizar e analisar dados de vendas. A partir de diferentes fontes de dados, foram realizadas etapas de limpeza, transformação, integração e geração de indicadores comerciais para apoiar a tomada de decisão.
+</p>
 
-Este projeto tem como objetivo desenvolver um processo completo de **ETL (Extract, Transform and Load)** utilizando Python e Pandas para tratamento, organização e análise de uma base de dados de vendas.
+<p align="center">
+    <img alt="Python" src="https://img.shields.io/badge/Python-3.12-blue">
+    <img alt="Pandas" src="https://img.shields.io/badge/Pandas-2.0-yellow">
+    <img alt="NumPy" src="https://img.shields.io/badge/NumPy-1.26-green">
+</p>
 
-O projeto simula um cenário empresarial onde uma empresa possui informações de vendas e metas comerciais armazenadas em diferentes arquivos. A partir desses dados, foi realizado um processo de limpeza, transformação, integração e geração de indicadores para apoiar a tomada de decisão.
 
----
+## 📄 Estrutura do repositório
 
-# 🎯 Objetivos
+- Veja o notebook completo do projeto:
+[ETL_Analise_Vendas.ipynb](INSIRA_O_LINK_DO_NOTEBOOK)
 
-- Realizar a extração de dados provenientes de diferentes fontes;
-- Realizar limpeza e padronização das informações;
-- Criar novas métricas para análise de desempenho;
-- Integrar bases de dados utilizando Python;
-- Gerar arquivos tratados para utilização posterior;
-- Desenvolver análises comerciais utilizando os dados processados.
+- Arquivos gerados após o processo de transformação:
+  - Vendas_SP.csv
+  - Vendas_2024.csv
 
----
 
-# 🛠️ Tecnologias utilizadas
+## ➕ Contexto
 
-- Python
-- Pandas
-- NumPy
-- Jupyter Notebook / Google Colab
-- GitHub
+Empresas possuem diariamente grandes volumes de dados provenientes de diferentes sistemas e arquivos. Porém, antes que essas informações possam ser utilizadas em análises ou ferramentas de Business Intelligence, é necessário realizar etapas de tratamento, padronização e organização.
 
----
+Neste projeto foi simulada uma situação real de uma empresa do setor de tecnologia que possui uma base de vendas e uma base contendo informações dos gerentes e metas comerciais.
 
-# 🔄 Fluxo do Projeto ETL
+O objetivo foi desenvolver um fluxo de ETL capaz de transformar dados brutos em uma base estruturada, permitindo a criação de indicadores relacionados ao desempenho comercial da empresa.
 
-```
-                 EXTRAÇÃO
-                    |
-                    ↓
-        Leitura dos arquivos CSV e Excel
-                    |
-                    ↓
-               TRANSFORMAÇÃO
-                    |
-                    ↓
-       - Tratamento de valores ausentes
-       - Padronização de textos
-       - Conversão de datas
-       - Remoção de duplicados
-       - Criação de novas métricas
-       - Integração entre bases
-                    |
-                    ↓
-                  CARGA
-                    |
-                    ↓
-        Exportação dos dados tratados
-        para novos arquivos
-```
 
----
+## ⚙️ Processo ETL
 
-# 📥 Extração dos dados
+O projeto foi desenvolvido seguindo as três etapas principais:
 
-Foram utilizadas duas bases de dados:
+### Extração
 
-### Base de vendas
+- Importação dos dados de vendas através de arquivo CSV;
+- Importação das informações dos gerentes através de arquivo Excel.
 
-Contém informações relacionadas aos pedidos realizados pela empresa, como:
+### Transformação
 
-- ID do pedido;
-- Data da venda;
-- Loja;
-- Produto;
-- Quantidade;
-- Preço unitário.
+Durante essa etapa foram realizadas:
 
-### Base de gerentes
+- Remoção de informações desnecessárias;
+- Tratamento de valores ausentes;
+- Padronização dos nomes das lojas e produtos;
+- Conversão de tipos de dados;
+- Remoção de registros duplicados;
+- Criação da coluna de faturamento;
+- Classificação das vendas entre Online e Presencial;
+- Identificação das regiões das lojas.
 
-Contém informações dos responsáveis pelas lojas e suas respectivas metas mensais.
+### Carga
 
----
+Após o tratamento dos dados foram gerados novos arquivos contendo informações específicas para utilização em análises.
 
-# 🧹 Tratamento e transformação dos dados
 
-Durante a etapa de transformação foram realizadas as seguintes operações:
+## 📊 Análises realizadas
 
-✅ Remoção de colunas desnecessárias;
+Foram desenvolvidas análises comerciais utilizando a base tratada:
 
-✅ Tratamento de valores ausentes;
+- Faturamento por loja;
+- Faturamento por região;
+- Produtos com maior faturamento;
+- Produtos com maior faturamento no canal online;
+- Comparativo entre vendas Online e Presencial;
+- Avaliação dos gerentes em relação às metas;
+- Evolução do faturamento ao longo do tempo.
 
-✅ Conversão da coluna de datas para o formato adequado;
 
-✅ Padronização dos nomes das lojas e produtos;
+## 🚀 Tecnologias
 
-✅ Remoção de registros duplicados utilizando o ID do pedido;
+- 🐍 Python
+- 📄 Pandas
+- 🔢 NumPy
+- 📊 Matplotlib
+- ⚡ Google Colaboratory
+- 💻 GitHub
 
-✅ Criação da coluna de faturamento;
-
-✅ Classificação das vendas entre Online e Presencial;
-
-✅ Identificação da região de cada loja.
 
 ---
 
-# 📤 Carga dos dados
-
-Após o tratamento, foram gerados novos arquivos contendo informações específicas para utilização em análises.
-
-Arquivos exportados:
-
-- Vendas realizadas na loja de São Paulo;
-- Vendas realizadas durante o ano de 2024.
-
-Essa etapa representa a disponibilização dos dados tratados após o processo de ETL.
-
----
-
-# 📈 Análises realizadas
-
-## 🏪 Faturamento por loja
-
-Análise do faturamento total de cada loja para identificar quais unidades apresentaram maior desempenho financeiro.
-
----
-
-## 🌎 Faturamento por região
-
-Análise do desempenho comercial agrupando as lojas por região do Brasil.
-
----
-
-## 🛒 Produtos com maior faturamento
-
-Identificação dos produtos que mais contribuíram para a receita total da empresa.
-
----
-
-## 💻 Produtos com maior faturamento no canal online
-
-Análise específica das vendas realizadas pelo canal digital, identificando os produtos com maior participação no faturamento online.
-
----
-
-## 🔄 Comparativo Online x Presencial
-
-Comparação entre os dois canais de venda para identificar qual modalidade possui maior contribuição no faturamento.
-
----
-
-## 🎯 Desempenho dos gerentes e metas
-
-Integração da base de vendas com a base de gerentes para avaliar:
-
-- Faturamento realizado;
-- Meta mensal;
-- Status da meta;
-- Percentual de atingimento.
-
----
-
-## 📊 Evolução do faturamento
-
-Visualização da evolução das vendas ao longo do tempo para identificar tendências e variações no desempenho comercial.
-
----
-
-# 📂 Estrutura do projeto
-
-```
-Projeto-ETL-Vendas/
-│
-├── ETL_Analise_Vendas.ipynb
-│
-├── README.md
-│
-├── dados/
-│   ├── vendas.csv
-│   └── gerentes.xlsx
-│
-└── output/
-    ├── Vendas_SP.csv
-    └── Vendas_2024.csv
-```
-
----
-
-# 📌 Principais aprendizados
-
-Durante o desenvolvimento deste projeto foram aplicados conhecimentos de:
-
-- Manipulação de dados com Pandas;
-- Limpeza e tratamento de dados;
-- Criação de indicadores;
-- Integração de diferentes fontes de dados;
-- Análise exploratória;
-- Organização de projetos de dados.
-
----
-
-# 🚀 Próximas melhorias
-
-Algumas melhorias que podem ser implementadas futuramente:
-
-- Automatização do pipeline ETL;
-- Integração com banco de dados SQL;
-- Criação de dashboard em Power BI;
-- Implementação de atualização automática dos dados.
-
----
-
-# 👨‍💻 Autor
-
-Matheus
-
-Projeto desenvolvido com o objetivo de aprimorar habilidades em **Análise de Dados, Python e Business Intelligence**.
+Desenvolvido por Matheus
